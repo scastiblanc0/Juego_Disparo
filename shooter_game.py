@@ -22,7 +22,6 @@ background = transform.scale(image.load('galaxy.jpg'), (ANCHO, ALTO))
 
 # MUSICA DE FONDO
 
-
 # clase padre para otros objetos
 class GameSprite(sprite.Sprite):
     # constructor de clase
@@ -57,8 +56,7 @@ class Bullet(GameSprite):
         self.rect.y -= self.speed
         if self.rect.y < 0:
             if self in bullets:
-                bullets.remove(self)
-            
+                bullets.remove(self)  
 
 class Player(GameSprite):
 
@@ -88,11 +86,8 @@ def setTextos(text, size, fuente = 'Arial', coors = (0, 0), color = (255, 255, 2
     render = sysfont.render(text, '', color)
     pantalla.blit(render, coors)
 
-
-
 #OBJEtos
 player = Player('rocket.png', 370, 420, 50, 50, 5)
-
 
 # Creacion de enemigos
 def generarEnemigos():
@@ -154,7 +149,7 @@ while not game_over:
 
             if contador > 8:
                 setTextos('Ganaste', 50, coors= (ANCHO / 3, ALTO / 2), color = (0 , 255, 0))
-                # pantalla.blit(textvictory, (ANCHO/ 2, ALTO / 2))
+                #pantalla.blit(textvictory, (ANCHO/ 2, ALTO / 2))
 
     else:
         setTextos('Presione T para Iniciar', 50, coors= (ANCHO / 5, ALTO / 2))
